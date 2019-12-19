@@ -26,7 +26,7 @@ async function get(resource){
                 }
             }); 
             return await response.json();
-        }else if(typeof fetch === "function"){
+        }else if(typeof XMLHttpRequest === "function"){
             let xhttp = new XMLHttpRequest();
             xhttp.open("GET", this.APIAddress + resource, true);
             xhttp.send();
@@ -38,6 +38,13 @@ async function get(resource){
                 };
             });
         }else{
+            const nodeFetch = require("node-fetch");
+				let response = await nodeFetch(this.APIAddress + resource, {
+					headers: {
+						"Authorization": this.APIKey
+					}
+				});
+            return await response.json();
         }
     }catch(error){
         throw error;
@@ -49,14 +56,11 @@ async function post(resource, data){
         if(typeof fetch === "function"){
             let response = await fetch(this.APIAddress + resource, {
                 headers :{
-                    "Authorization": this.APIKey,
-                    "Content-Type": "application/json"
-                },
-                method: "POST",
-                body: JSON.stringify(data)
+                    "Authorization": this.APIKey
+                }
             });
             return await response.json();
-        }else{ //if(typeof fetch === "function"){
+        }else if(typeof XMLHttpRequest === "function"){
             let xhttp = new XMLHttpRequest();
             xhttp.open("POST", this.APIAddress + resource, true);
             xhttp.setRequestHeader("Content-Type", "application/json");
@@ -69,7 +73,15 @@ async function post(resource, data){
                     }
                 };
             });
-        } //else{}
+        }else{
+            const nodeFetch = require("node-fetch");
+				let response = await nodeFetch(this.APIAddress + resource, {
+					headers: {
+						"Authorization": this.APIKey
+					}
+				});
+				return await response.json();
+        }
     }catch (error){
         throw error;
     }
@@ -89,7 +101,7 @@ async function put(resource, data){
                 body: JSON.stringify(data)
             });
             return await response.json();
-        }else{ //if(typeof fetch === "function"){
+        }else if(typeof XMLHttpRequest === "function"){
             let xhttp = new XMLHttpRequest();
             xhttp.open("PUT", this.APIAddress + resource, true);
             xhttp.setRequestHeader("Content-Type", "application/json");
@@ -102,7 +114,15 @@ async function put(resource, data){
                     }
                 };
             });
-        } //else{}
+        }else{
+            const nodeFetch = require("node-fetch");
+				let response = await nodeFetch(this.APIAddress + resource, {
+					headers: {
+						"Authorization": this.APIKey
+					}
+				});
+				return await response.json();
+        }
     }catch (error){
         throw error;
     }
@@ -121,7 +141,7 @@ async function del(resource){
             return await new Promise(function(resolve, reject){
                 resolve(response.status);
             });
-        }else{  //if(typeof fetch === "function"){
+        }else if(typeof XMLHttpRequest === "function"){
             let xhttp = new XMLHttpRequest();
             xhttp.open("DELETE", this.APIAddress + resource, true);
             xhttp.send();
@@ -130,7 +150,19 @@ async function del(resource){
                     resolve(xhttp.status);
                 };
             });
-        } //else{}
+        }else{
+            const nodeFetch = require("node-fetch");
+				let response = await nodeFetch(this.APIAddress + resource, {
+                    headers: {
+                        "Authorization": this.APIKey
+                    },
+                    method: "DELETE"
+				});
+				
+                return await new Promise(function(resolve, reject){
+					resolve(response.status);
+				});
+        }
     }catch(error){
         throw error;
 
@@ -145,4 +177,4 @@ return {
     del        
 }
 
-}));
+}))

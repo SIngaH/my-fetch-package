@@ -47,7 +47,6 @@
                 $(".spinner").toggle();
                 console.log(result);
                 result.forEach(person => {
-                    
                     $(".person__name").text(result.data[person].first_name);
                     $(".person__last-name").text(result.data[person].last_name);
                     $(".person__image").attr("src", result.data[person].avatar);

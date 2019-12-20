@@ -7,7 +7,7 @@ npm i @singah/fetchwrapper
 
 ## How to use
 ```bash
-let fetchWrapper = require("@singah/fetchwrapper");
+let myFetch = require("@singah/fetchwrapper");
 myFetch.get();
 ```
 ## With all

@@ -1,34 +1,84 @@
-myFetch
-Opgave:
+# Fetch wrapper
 
-I umd.js filen skal der tilføjes endnu et fallback til de 4 HTTP metoder, vi allerede har skrevet: myFetch.post(), myFetch.get(), myFetch.put() og myFetch.del().
+## How to install
+```bash
+npm i @singah/fetchWrapper
+```
 
-Vi har allerede skrevet fallback efter følgende princip:
+## How to use
+```bash
+let fetchWrapper = require("@singah/fetchWrapper");
+myFetch.get();
+```
+## With all
+```bash
+myFetch.init({
+    address : "api adresse",
+    key: "1234"
+});
+```
+## for GET add
+```bash
+myFetch.get("underside")
+    .then(result => {
+		
+    });
+```
 
-Hvis fetch er en funktion {
-	udfør en request med fetch
-}
+## for POST add
+```bash
+$(".userForm").on("submit", function(e){
+    e.preventDefault();  
+    let data = {
+        name: this.name.value,
+        role: this.role.value
+    };  
+    myFetch.post("underside", data)
+       .then(result => {
+            console.log(result);
+       });
+});
+```
+## for DELETE add
+```bash
+$(".userForm").on("submit", function(e){
+    e.preventDefault();
+    let data = {
+        name: this.name.value,
+        role: this.role.value
+    };
+    
+    myFetch.del("underside")
+        .then(result => {
+            console.log(result);
+        });
+});
+```
+## for PUT add
+```bash
+$(".userForm").on("submit", function(e){
+    e.preventDefault();
+    
+    let data = {
+        name: this.name.value,
+        role: this.role.value
+    };
+    
+    myFetch.put("underside", data)
+        .then(result => {
+            console.log(result);
+        });
+});
+```
 
-ellers {
-	udfør en request med XMLHttpRequest
-}
+## To see it in nodejs
+```bash
+myFetch.get("underside").then(result => console.log(result));
+```
 
-Nu skal vi tilføje et fallback som gør, at vi også kan lave requests ved hjælp af Node.js. Det vil sige, vi skal kunne lave requests fra et script, som ikke bliver kørt i browseren. Fallbacket skal følge dette princip:
+## Remember to install jquery
+```bash
+npm i jquery
 
-Hvis fetch er en funktion {
-	udfør en request med fetch
-}
-
-ellers, hvis XMLHttpRequest er en funktion {
-	udfør en request med XMLHttpRequest
-}
-
-ellers {
-	udfør en request med et node.js-baseret request værktøj
-}
-
-Tænk over følgende:
-
-Hvordan laver man requests til et web API fra et Node.js script?
-
-Skal dette Node.js-baserede værktøj nævnes øverst i vores UMD-factory som en dependency?
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+```

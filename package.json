@@ -1,6 +1,6 @@
 {
   "name": "@singah/fetchwrapper",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "```bash\r npm i @singah/fetchWrapper\r ```",
   "main": "umd.js",
   "scripts": {

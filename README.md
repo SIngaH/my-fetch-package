@@ -2,12 +2,12 @@
 
 ## How to install
 ```bash
-npm i @singah/fetchWrapper
+npm i @singah/fetchwrapper
 ```
 
 ## How to use
 ```bash
-let fetchWrapper = require("@singah/fetchWrapper");
+let fetchWrapper = require("@singah/fetchwrapper");
 myFetch.get();
 ```
 ## With all

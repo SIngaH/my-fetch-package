@@ -1,16 +1,25 @@
 {
-  "name": "umd",
+  "name": "@singah/fetchwrapper",
   "version": "1.0.0",
-  "description": "",
+  "description": "```bash\r npm i @singah/fetchWrapper\r ```",
   "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Sigurros Inga Helgadottir <sigurroshelgadottir@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "jquery": "^3.4.1",
     "node-fetch": "^2.6.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SIngaH/my-fetch-package.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SIngaH/my-fetch-package/issues"
+  },
+  "homepage": "https://github.com/SIngaH/my-fetch-package#readme"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@singah/fetchwrapper",
-  "version": "1.1.0",
+  "version": "0.1.0",
   "description": "```bash\r npm i @singah/fetchWrapper\r ```",
   "main": "test.js",
   "scripts": {

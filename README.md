@@ -2,10 +2,10 @@
 
 ## Why use this Fetch wrapper?
 This fetch wrapper makes it easier to fetch things from an api. 
+
 In this fetch you can use get, post, put or del(stands for delete).
 
 If fetch is unavailable, it will check for an XMLHttpRequest and if neither of those are present it can also use node-fetch.
-This wrapper already has a try catch that console.logs the error.
 
 ___
 
@@ -27,7 +27,7 @@ And when you link to your own js file, it should look something like this
 <script type="module" src="example.js"></script>
 ```
 
-But if you are only going to use the node-fetch ypu only need to write
+But if you are only going to use the node-fetch you only need to write
 ```javascript
 const myFetch = require("@singah/fetchwrapper");
 ```
@@ -35,11 +35,11 @@ const myFetch = require("@singah/fetchwrapper");
 ___
 
 ## How to use 
-When you have written all things needed in your html, the next thing you need to do is write
+When you have written all things needed in your html, the next thing you need to do is write in your javascript file
 
 ```javascript
 myFetch.init({
-    address : "https://theApiAdressHere/",
+    address : "https://theApiAddressHere/",
     key: "1234"
 });
 ```

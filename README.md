@@ -56,7 +56,12 @@ myFetch.get("subpageHere/")
 ___
 
 ## Example using a free api
-To test this out you need an html with
+To start the test you need to open the terminal and write
+```
+npm i @singah/fetchwrapper
+```
+
+Then you need an html where you write
 ```html
 <div class="person">
 

@@ -52,3 +52,33 @@ myFetch.get("subpageHere/")
         $(".MyClassName").text(result.WhatToGet);
     });
 ```
+
+___
+
+## Example using a free api
+To test this out you need an html with
+```html
+<div class="person">
+
+</div>
+<!--At the bottom of your body you need-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/@singah/fetchwrapper@0.1.4/umd.js"></script>
+
+<script type="module" src="example.js"></script>
+```
+And in your example.js you need
+```javascript
+myFetch.init({
+    address : "https://reqres.in/api/",
+    key: "1234"
+});
+myFetch.get("users/")
+    .then(result => {
+        result.data.forEach(person => {
+            $(".person").append(`<ul class="aperson"><li>${person.first_name + " " + person.last_name}</li><li><img src="${person.avatar}" alt="${person.first_name + " " + person.last_name}"</li><li>${person.email}</li></ul>`);
+        });
+    });
+```
+

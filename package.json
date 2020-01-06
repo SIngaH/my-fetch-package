@@ -1,10 +1,10 @@
 {
   "name": "@singah/fetchwrapper",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "```bash\r npm i @singah/fetchWrapper\r ```",
   "main": "umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "doc": "jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "Sigurros Inga Helgadottir <sigurroshelgadottir@gmail.com>",
@@ -13,7 +13,9 @@
     "jquery": "^3.4.1",
     "node-fetch": "^2.6.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SIngaH/my-fetch-package.git"

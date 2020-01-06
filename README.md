@@ -1,7 +1,7 @@
 # Fetch wrapper
 
 ## Why use this Fetch wrapper?
-This fetch wrapper makes it easier to fetch things from an api. 
+This fetch wrapper makes it easier to fetch things from an API. 
 
 In this fetch you can use get, post, put or del(stands for delete).
 
@@ -19,7 +19,7 @@ In your html you link to theese two
 ```html
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 
-<script src="https://unpkg.com/@singah/fetchwrapper@0.1.4/umd.js"></script>
+<script src="https://unpkg.com/@singah/fetchwrapper@0.1.10/umd.js"></script>
 
 ```
 And when you link to your own js file, it should look something like this
@@ -55,7 +55,8 @@ myFetch.get("subpageHere/")
 
 ___
 
-## Example using a free api
+
+## Example using a free API
 To start the test you need to open the terminal and write
 ```
 npm i @singah/fetchwrapper
@@ -66,10 +67,11 @@ Then you need an html where you write
 <div class="person">
 
 </div>
+
 <!--At the bottom of your body you need-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 
-<script src="https://unpkg.com/@singah/fetchwrapper@0.1.4/umd.js"></script>
+<script src="https://unpkg.com/@singah/fetchwrapper@0.1.10/umd.js"></script>
 
 <script type="module" src="example.js"></script>
 ```
